@@ -1,7 +1,7 @@
 /*
-Description: 
-Author     : Wang Junpeng
-date       : 
+Description:
+Author     : Ji Qingshi
+date       :
 */
 
 #include <ros/ros.h>
@@ -9,7 +9,8 @@ date       :
 #include <parameters.h>
 #include <Estimator.h>
 
-int main(int argc, char** argv) {
+int main(int argc, char **argv)
+{
   ros::init(argc, argv, "lins_fusion_node");
   ros::NodeHandle nh;
   ros::NodeHandle pnh("~");
@@ -19,8 +20,8 @@ int main(int argc, char** argv) {
   parameter::readParameters(pnh);
 
   fusion::LinsFusion lins(nh, pnh); // defined in Estimator.h
-  lins.run(); // defined in Estimator.h
+  lins.run( ); // defined in Estimator.h
 
-  ros::spin();
+  ros::spin( );
   return 0;
 }
